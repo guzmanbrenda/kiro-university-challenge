@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asesor de Autoevaluación AWS</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="header-logo" aria-hidden="true">☁️</span>
+        <div>
+          <h1 class="header-title">Asesor de Autoevaluación AWS</h1>
+          <p class="header-subtitle">Identifica tus brechas y genera tu reporte de evidencia</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-analizar" class="btn btn-secondary" disabled>
+          Ver análisis de gaps
+        </button>
+        <button id="btn-reporte" class="btn btn-primary" disabled>
+          Exportar reporte
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- BARRA DE PROGRESO GLOBAL -->
+  <div class="progress-bar-container" role="progressbar" aria-label="Progreso de evaluación" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+    <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+    <span id="progress-label" class="progress-label">0% completado</span>
+  </div>
+
+  <!-- MENSAJE DE ERROR -->
+  <div id="error-banner" class="error-banner hidden" role="alert">
+    <span id="error-message"></span>
+    <button class="error-close" onclick="document.getElementById('error-banner').classList.add('hidden')" aria-label="Cerrar aviso">✕</button>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content">
+
+    <!-- PANEL DE CARGA INICIAL -->
+    <div id="loading-panel" class="loading-panel">
+      <div class="spinner" aria-label="Cargando cuestionario"></div>
+      <p>Cargando cuestionario…</p>
+    </div>
+
+    <!-- CUESTIONARIO -->
+    <section id="questionnaire-section" class="hidden" aria-label="Cuestionario de competencias">
+      <div id="categories-container"></div>
+    </section>
+
+    <!-- PANEL DE ANÁLISIS DE GAPS -->
+    <section id="analysis-section" class="hidden" aria-label="Análisis de gaps">
+      <div class="section-header">
+        <h2>Análisis de gaps</h2>
+        <button id="btn-volver" class="btn btn-outline">← Volver al cuestionario</button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card stat-green">
+          <span id="stat-cumple" class="stat-number">0</span>
+          <span class="stat-label">Cumple</span>
+        </div>
+        <div class="stat-card stat-yellow">
+          <span id="stat-parcial" class="stat-number">0</span>
+          <span class="stat-label">Parcial</span>
+        </div>
+        <div class="stat-card stat-red">
+          <span id="stat-nocumple" class="stat-number">0</span>
+          <span class="stat-label">No cumple</span>
+        </div>
+        <div class="stat-card stat-blue">
+          <span id="stat-porcentaje" class="stat-number">0%</span>
+          <span class="stat-label">Cumplimiento global</span>
+        </div>
+      </div>
+
+      <div id="gaps-list" class="gaps-list"></div>
+    </section>
+
+  </main>
+
+  <!-- MODAL DE REPORTE -->
+  <div id="report-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modal-title">Reporte de evidencia</h2>
+        <button class="modal-close" id="btn-cerrar-modal" aria-label="Cerrar modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-actions">
+          <button id="btn-descargar-md" class="btn btn-primary">⬇ Descargar Markdown</button>
+          <button id="btn-descargar-json" class="btn btn-secondary">⬇ Descargar JSON</button>
+        </div>
+        <pre id="report-preview" class="report-preview"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+{
+  "titulo": "Evaluación de Competencias AWS",
+  "version": "1.0.0",
+  "descripcion": "Cuestionario de autoevaluación basado en el AWS Cloud Practitioner y competencias de arquitectura en la nube.",
+  "categorias": [
+    {
+      "id": "cat-1",
+      "nombre": "Conceptos de la Nube",
+      "criterios": [
+        {
+          "id": "crit-1-1",
+          "descripcion": "Comprendo los beneficios clave de la nube AWS (escalabilidad, elasticidad, agilidad, reducción de costos).",
+          "nivel": "básico"
+        },
+        {
+          "id": "crit-1-2",
+          "descripcion": "Puedo diferenciar entre los modelos IaaS, PaaS y SaaS con ejemplos concretos en AWS.",
+          "nivel": "básico"
+        },
+        {
+          "id": "crit-1-3",
+          "descripcion": "Entiendo el modelo de responsabilidad compartida de AWS y sé qué le corresponde al cliente vs. a AWS.",
+          "nivel": "básico"
+        },
+        {
+          "id": "crit-1-4",
+          "descripcion": "Conozco la diferencia entre Regiones, Zonas de Disponibilidad y Ubicaciones de borde (Edge Locations).",
+          "nivel": "básico"
+        }
+      ]
+    },
+    {
+      "id": "cat-2",
+      "nombre": "Seguridad e Identidad",
+      "criterios": [
+        {
+          "id": "crit-2-1",
+          "descripcion": "Sé crear y gestionar usuarios, grupos, roles y políticas en AWS IAM siguiendo el principio de mínimo privilegio.",
+          "nivel": "intermedio"
+        },
+        {
+          "id": "crit-2-2",
+          "descripcion": "Puedo configurar MFA (autenticación multifactor) para cuentas de AWS.",
+          "nivel": "básico"
+        },
+        {
+          "id": "crit-2-3",
+          "descripcion": "Conozco los servicios de seguridad AWS principales: Security Hub, GuardDuty, AWS Shield y WAF.",
+          "nivel": "intermedio"
+        },
+        {
+          "id": "crit-2-4",
+          "descripcion": "Entiendo cómo funciona AWS KMS y cuándo usarlo para cifrado de datos en reposo y en tránsito.",
+          "nivel": "avanzado"
+        }
+      ]
+    },
+    {
+      "id": "cat-3",
+      "nombre": "Cómputo",
+      "criterios": [
+        {
+          "id": "crit-3-1",
+          "descripcion": "Puedo lanzar y configurar instancias EC2, seleccionando el tipo de instancia adecuado para cada carga de trabajo.",
+          "nivel": "intermedio"
+        },
+        {
+          "id": "crit-3-2",
+          "descripcion": "Conozco las diferencias entre instancias On-Demand, Reserved y Spot, y cuándo usar cada una.",
+          "nivel": "intermedio"
+        },
+        {
+          "id": "crit-3-3",
+          "descripcion": "Puedo crear y desplegar funciones AWS Lambda y entender su modelo de ejecución sin servidor.",
+          "nivel": "intermedio"
+        },
+        {
+          "id": "crit-3-4",
+          "descripcion": "Conozco Amazon ECS y EKS para orquestación de contenedores y puedo describir sus casos de uso.",
+          "nivel": "avanzado"
+        }
+      ]
+    },
+    {
+      "id": "cat-4",
+      "nombre": "Almacenamiento y Bases de Datos",
+      "criterios": [
+        {
+          "id": "crit-4-1",
+          "descripcion": "Puedo crear y configurar buckets S3, gestionar permisos y aplicar políticas de ciclo de vida.",
+          "nivel": "intermedio"
+        },
+        {
+          "id": "crit-4-2",
+          "descripcion": "Entiendo los casos de uso de EBS, EFS y S3 y sé cuándo usar cada servicio de almacenamiento.",
+          "nivel": "intermedio"
+        },
+        {
+          "id": "crit-4-3",
+          "descripcion": "Puedo configurar y consultar bases de datos en Amazon RDS, incluyendo backups y Multi-AZ.",
+          "nivel": "intermedio"
+        },
+        {
+          "id": "crit-4-4",
+          "descripcion": "Conozco DynamoDB y sus conceptos clave (tablas, partitions, GSI, LSI) para cargas de trabajo NoSQL.",
+          "nivel": "avanzado"
+        }
+      ]
+    },
+    {
+      "id": "cat-5",
+      "nombre": "Redes y Entrega de Contenido",
+      "criterios": [
+        {
+          "id": "crit-5-1",
+          "descripcion": "Puedo diseñar y configurar una VPC con subnets públicas y privadas, Internet Gateway y route tables.",
+          "nivel": "avanzado"
+        },
+        {
+          "id": "crit-5-2",
+          "descripcion": "Entiendo el funcionamiento de Security Groups y NACLs y sus diferencias en el control de tráfico.",
+          "nivel": "intermedio"
+        },
+        {
+          "id": "crit-5-3",
+          "descripcion": "Conozco Amazon CloudFront como CDN y puedo describir sus beneficios de rendimiento y seguridad.",
+          "nivel": "intermedio"
+        },
+        {
+          "id": "crit-5-4",
+          "descripcion": "Puedo configurar Route 53 para resolución DNS, enrutamiento de tráfico y health checks.",
+          "nivel": "avanzado"
+        }
+      ]
+    },
+    {
+      "id": "cat-6",
+      "nombre": "Monitoreo y Operaciones",
+      "criterios": [
+        {
+          "id": "crit-6-1",
+          "descripcion": "Puedo crear dashboards y alarmas en Amazon CloudWatch para monitorear métricas de recursos AWS.",
+          "nivel": "intermedio"
+        },
+        {
+          "id": "crit-6-2",
+          "descripcion": "Conozco AWS CloudTrail y su uso para auditoría y rastreo de llamadas a la API de AWS.",
+          "nivel": "intermedio"
+        },
+        {
+          "id": "crit-6-3",
+          "descripcion": "Puedo usar AWS Systems Manager para gestionar configuraciones y parches en instancias EC2.",
+          "nivel": "avanzado"
+        },
+        {
+          "id": "crit-6-4",
+          "descripcion": "Entiendo el concepto de Infrastructure as Code y puedo crear stacks básicos con AWS CloudFormation.",
+          "nivel": "avanzado"
+        }
+      ]
+    }
+  ]
+}
