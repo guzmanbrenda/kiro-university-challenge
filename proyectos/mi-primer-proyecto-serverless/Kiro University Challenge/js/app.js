@@ -435,7 +435,37 @@ function generarReporteJSON() {
   };
 }
 
+/**
+ * Devuelve los criterios marcados como "Cumple" que no tienen nota de evidencia.
+ * @returns {{ crit: object, categoria: string }[]}
+ */
+function obtenerCumplesSinEvidencia() {
+  const sinEvidencia = [];
+  for (const cat of state.cuestionario.categorias) {
+    for (const crit of cat.criterios) {
+      const resp = state.respuestas[crit.id];
+      if (resp?.estado === 'cumple' && !resp.nota.trim()) {
+        sinEvidencia.push({ crit, categoria: cat.nombre });
+      }
+    }
+  }
+  return sinEvidencia;
+}
+
 function abrirModal() {
+  const sinEvidencia = obtenerCumplesSinEvidencia();
+  const avisoEl = elements.reportModal.querySelector('#aviso-sin-evidencia');
+
+  if (sinEvidencia.length > 0) {
+    const lista = sinEvidencia
+      .map(({ crit, categoria }) => `• [${escapeHtml(categoria)}] ${escapeHtml(crit.descripcion)}`)
+      .join('\n');
+    avisoEl.querySelector('#aviso-lista').textContent = lista;
+    avisoEl.classList.remove('hidden');
+  } else {
+    avisoEl.classList.add('hidden');
+  }
+
   const md = generarReporteMarkdown();
   elements.reportPreview.textContent = md;
   elements.reportModal.classList.remove('hidden');

@@ -540,6 +540,46 @@ body {
 }
 
 /* =============================================
+   AVISO SIN EVIDENCIA
+   ============================================= */
+.aviso-evidencia {
+  background: #2d2200;
+  border: 1px solid #854d0e;
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: #fde68a;
+  font-size: 0.85rem;
+}
+
+.aviso-evidencia strong {
+  font-size: 0.9rem;
+  color: var(--color-yellow);
+}
+
+.aviso-evidencia p {
+  color: #fde68a;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.aviso-lista {
+  background: rgba(0,0,0,0.25);
+  border: 1px solid #854d0e;
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.78rem;
+  color: #fcd34d;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: 'Courier New', monospace;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =============================================
    RESPONSIVE
    ============================================= */
 @media (max-width: 640px) {
